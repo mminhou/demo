@@ -1,0 +1,40 @@
+<!-- Fixed-top Navigation -->
+<nav class="navbar fixed-top my-header navbar-toggleable-md navbar-inverse bg-inverse" style="padding: 0;" [ngClass]= "{'page-scroll-header': isScrolled}">
+  <button class="navbar-toggler navbar-toggler-right ml-5 ml-lg-0 dropdown-toggle" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-haspopup="true" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!-- Brand -->
+  <span class="navbar-text">&nbsp;LOGO</span>
+
+  <!-- Links -->
+  <div class="collapse navbar-collapse justify-content-md-center" id="nav-content">
+    <ul class="navbar-nav">
+      <li class="nav-item top-nav-item text-center">
+        <a class="nav-link" (click)="refresh()" routerLink="/home" routerLinkActive="active">home</a>
+      </li>
+      <li class="nav-item top-nav-item text-center">
+        <a class="nav-link" (click)="refresh()" routerLink="/share" routerLinkActive="active">share</a>
+
+      </li>
+      <li class="nav-item top-nav-item text-center">
+        <a class="nav-link" (click)="refresh()" routerLink="/favorite" routerLinkActive="active">favorite</a>
+      </li>
+      <li class="nav-item top-nav-item text-center">
+        <a class="nav-link" (click)="refresh()" routerLink="/recommend" routerLinkActive="active">recommend</a>
+      </li>
+      <li class="nav-item top-nav-item text-center">
+        <a class="nav-link" (click)="authService.login(); refresh()" *ngIf="authService.isLoggedIn()" routerLink="/login">login</a>
+        <a class="nav-link" (click)="authService.logout(); refresh()" *ngIf="!authService.isLoggedIn()" routerLink="/login">logout</a>
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="!authService.isLoggedIn()">
+    <span class="navbar-text hidden-xs-down hidden-sm-down hidden-md-down" routerLink="/account"><i class="fa fa-user-secret"></i></span>
+  </div>
+
+
+
+</nav>
+
+<router-outlet></router-outlet>

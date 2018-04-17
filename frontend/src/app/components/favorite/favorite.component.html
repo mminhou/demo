@@ -1,0 +1,54 @@
+<div class="container text-center" style="margin-top: 63.59px;">
+  <div class="row">
+
+    <div *ngFor="let favorite of currentUser.user.favorite " class="col-md-3" style="padding-right:8px; padding-left: 8px;">
+
+      <div class="favorite">
+        <img class="img-responsive" width="100%" (click)="lgModal.show()"  src={{favorite.post.mainImage}}/>
+      </div>
+
+      <!--<div class="profile-card text-center" style="box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15); color: black; border-radius: 3% 3% 3% 3%">-->
+      <!--<img class="img-responsive" (click)="lgModal.show()" width="100%" src="{{ favorite.post.mainImage }}" style="border-radius: 2% 2% 0 0;">-->
+      <!--<div class="profile-info">-->
+      <!--<h2 class="hvr-underline-from-center" style="font-variant: small-caps">{{ favorite.post.title }}<span style="font-variant: none;">{{ favorite.post.owner }}</span></h2>-->
+      <!--<div style="padding-bottom: 10px;">-->
+      <!--<i class="fa fa-ellipsis-h" style="font-size: 20px; padding-right: 5%;" (click)="lgModal.show();"></i>-->
+
+      <!--</div>-->
+      <!--</div>-->
+      <!--</div>-->
+
+      <div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+
+              <div class="pull-left">
+                <img width="15%" src="http://127.0.0.1:8000/media/user.jpeg" alt="..." class="rounded-circle">
+                <h6 style="display: inline-block">{{ favorite.post.owner }}</h6>
+              </div>
+              <button type="button" class="close pull-right" (click)="lgModal.hide()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <img class="card-img" width="100%" src={{favorite.post.mainImage}} alt="sample3"/>
+              <div class="lib-row lib-header" style="font-variant: small-caps;">
+                {{ favorite.post.title }}
+              </div>
+              <div class="lib-row lib-desc">
+                {{ favorite.post.snippet }}
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

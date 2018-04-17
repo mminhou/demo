@@ -1,0 +1,29 @@
+.vertical-line {
+  width:3px;
+  height:45px;
+  background: dimgrey;
+  display: inline-block;
+  border-radius: 7px 7px 7px 7px;
+}
+
+.study-title {
+  font-variant: all-small-caps;
+  color: darkslategrey;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+.row {
+  margin-bottom: 10px;
+}
+.frontend-background {
+  background: url("http://127.0.0.1:8000/media/99c68f50-6ea.jpg") center / cover;
+  height: 300px;
+}
+.backend-background {
+  background: url("http://127.0.0.1:8000/media/271a0597-abd.png") center / cover;
+  height: 300px;
+}
+.language-background {
+  background: url("http://127.0.0.1:8000/media/e12ef881-d76.jpg") center / cover;
+  height: 300px;
+}

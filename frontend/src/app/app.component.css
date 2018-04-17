@@ -1,0 +1,39 @@
+.top-nav-item {
+  width: 200px;
+  font-size: 17px;
+  font-weight: 400;
+}
+.bottom-nav-item {
+  width: 50px;
+}
+.nav-link {
+  font-variant: small-caps;
+}
+.not-shrink-nav{
+  padding: 4rem 1em 1rem 1em;
+}
+
+/* Dropdown hover */
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+/* */
+.dropdown-menu .dropdown-item {
+  font-variant: small-caps;
+  font-weight: 400;
+}
+
+
+/* */
+.page-scroll-header {
+  background-color: white !important;
+  opacity: 0.9;
+}
+.page-scroll-header .nav-link {
+  color: #1b3249 !important;
+  font-weight: 600;
+}
+.my-header {
+  transition: background-color 2s ease-out;
+}

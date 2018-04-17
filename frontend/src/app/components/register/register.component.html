@@ -1,0 +1,97 @@
+<!-- Register Form -->
+<div class="login-screen"></div>
+<div class="login-center">
+  <div class="container min-height" style="margin-top: 200px;">
+    <div class="row">
+      <div class="col-xs-4 col-md-offset-8">
+
+
+        <alert></alert>
+        <div class="login">
+          <div class="front signin_form">
+            <p>Create New Account</p>
+
+
+
+            <form class="login-form" name="form" (ngSubmit)="register()" #registerForm="ngForm">
+
+              <div class="form-group">
+
+                <div class="input-group">
+                  <label for="username"></label>
+                  <input mdInput type="text" placeholder="Type your username" class="form-control" id="username"
+                         [(ngModel)]="model.username" #username="ngModel" name="username"
+                         minlength="4" maxlength="20" required autofocus>
+                  <span class="input-group-addon" style="width: 38px;"><i class="fa fa-user" style="color: whitesmoke;"></i></span>
+                </div>
+
+                <div *ngIf="username.errors && (username.dirty || username.touched)" class="alert alert-danger" style="background: transparent; font-weight: 600;">
+                  <small [hidden]="!username.errors.required">
+                    Name is required
+                  </small>
+                  <small [hidden]="!username.errors.minlength">
+                    Name must be at least 4 characters long.
+                  </small>
+                  <small [hidden]="!username.errors.maxlength">
+                    Name cannot be more than 24 characters long.
+                  </small>
+                </div>
+
+              </div>
+
+              <div class="form-group">
+
+                <div class="input-group">
+                  <label for="password"></label>
+                  <input mdInput type="password" placeholder="Type your password" class="form-control" id="password"
+                         [(ngModel)]="model.password" #password="ngModel" name="password"
+                         required minlength="8">
+                  <span class="input-group-addon" style="width: 38px;"><i class="fa fa-lock" style="color: whitesmoke;"></i></span>
+                </div>
+
+                <div *ngIf="password.errors && (password.dirty || password.touched)" class="alert alert-danger" style="background: transparent; font-weight: 600;">
+                  <small [hidden]="!password.errors.required">
+                    Password is required
+                  </small>
+                  <small [hidden]="!password.errors.minlength">
+                    Password must be at least 8 characters long.
+                  </small>
+                </div>
+
+              </div>
+
+              <div class="form-group">
+
+                <div class="input-group">
+                  <label for="email"></label>
+                  <input mdInput type="email" placeholder="Type your email" class="form-control" id="email"
+                         [(ngModel)]="model.email" #email="ngModel" name="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                         required>
+                  <span class="input-group-addon" style="width: 38px;"><i class="fa fa-envelope" style="color: whitesmoke;"></i></span>
+                </div>
+
+                <div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger" style="background: transparent; font-weight: 600;">
+                  <small [hidden]="!email.errors.required">
+                    Email is required
+                  </small>
+                  <small [hidden]="!email.errors.pattern">
+                    Please enter a valid email address
+                  </small>
+                </div>
+
+              </div>
+
+              <div class="form-group sign-btn" style="display: flex;">
+                <input type="submit" class="btn" value="REGISTER" [disabled]="!registerForm.form.valid" style="margin-right: 10px;">
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>

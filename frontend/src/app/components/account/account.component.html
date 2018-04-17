@@ -1,0 +1,110 @@
+<div style="margin-top: 80px;"></div>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+<div [hidden]="changeAccount">
+  <div class="pricing-table" style="padding-left: 9%;">
+    <div class="pricing-option">
+      <i class="material-icons">important_devices</i>
+      <h1>My Post</h1>
+      <hr />
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente harum voluptatum, sit cum voluptatibus inventore quae qui provident eveniet dicta at, quibusdam ipsam iusto reprehenderit hic saepe nesciunt sed illo.</p>
+      <hr />
+      <div class="price">
+        <div class="front">
+          <span class="price"><i class="fa fa-check"></i></span>
+        </div>
+        <div class="back">
+          <a  class="button">Show more</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pricing-option">
+      <i class="material-icons">perm_identity</i>
+      <h1>Account</h1>
+      <hr />
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente harum voluptatum, sit cum voluptatibus inventore quae qui provident eveniet dicta at, quibusdam ipsam iusto reprehenderit hic saepe nesciunt sed illo.</p>
+      <hr />
+      <div class="price">
+        <div class="front">
+          <span class="price"><i class="fa fa-check"></i></span>
+        </div>
+        <div class="back">
+          <a (click)="ChangeAccount()" class="button">Show more</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pricing-option">
+      <i class="material-icons">art_track</i>
+      <h1>Favorite</h1>
+      <hr />
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente harum voluptatum, sit cum voluptatibus inventore quae qui provident eveniet dicta at, quibusdam ipsam iusto reprehenderit hic saepe nesciunt sed illo.</p>
+      <hr />
+      <div class="price">
+        <div class="front">
+          <span class="price"><i class="fa fa-check"></i></span>
+        </div>
+        <div class="back">
+          <a href="/favorite" class="button">Show more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div [hidden]="!changeAccount">
+  <div class="container">
+    <div class="col-md-12 text-center main">
+      <div class="panel-heading">
+        <div class="panel-title text-center">
+          <h1 class="title"></h1>
+        </div>
+      </div>
+      <br />
+      <div class="main-login main-center" style="border-top: 1px solid lightgrey;">
+        <form class="form-horizontal" method="post" action="#">
+
+          <div class="form-group">
+            <label for="name" class="cols-sm-2 control-label" style="float: left;"></label>
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                <p type="text" style="color: grey;" class="form-control" name="name" id="name">{{currentUser.user.username}}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="cols-sm-2 control-label"></label>
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" name="email" id="email"  placeholder="{{currentUser.user.email}}"/>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label for="password" class="cols-sm-2 control-label"></label>
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                <input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group ">
+            <button type="button" class="btn btn-primary">Register</button>
+            <button type="button" class="btn btn-secondary" (click)="back()">Back</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+  </div>
+</div>
